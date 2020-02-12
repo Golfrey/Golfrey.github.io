@@ -3,7 +3,8 @@ title: Spring Boot 的mistakes
 date: 2019-12-29 21:49:54
 tags: 
 - Go
-categories: Learning
+
+categories: Learnings
 ---
 
 # Go语言学习
