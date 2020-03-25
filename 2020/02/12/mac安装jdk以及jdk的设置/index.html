@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Godfrey Xu">
+
+
+    <meta name="subtitle" content="I am cute">
+
+
+
+
+<title>mac安装jdk以及jdk的设置 | Golfrey&#39;s website</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Godfrey&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Godfrey&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">mac安装jdk以及jdk的设置</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Godfrey Xu</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">February 12, 2020&nbsp;&nbsp;17:11:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Learning/">Learning</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="mac安装jdk以及jdk的设置"><a href="#mac安装jdk以及jdk的设置" class="headerlink" title="mac安装jdk以及jdk的设置"></a>mac安装jdk以及jdk的设置</h1><h2 id="从oracle的网站上安装jdk"><a href="#从oracle的网站上安装jdk" class="headerlink" title="从oracle的网站上安装jdk"></a>从oracle的网站上安装jdk</h2><p>安装网址<a href="https://www.oracle.com/technetwork/java/javase/overview/index.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/overview/index.html</a></p>
+<p>因为Oracle进行下载需要账号和密码，经过了紧张而刺激的测试以后，我发现自己完全做不到能够注册一个自己的号，但是网上还是好心人多啊，所以我进行了baidu搜索，发现了一个别人成功注册时的账号，完美的完成了下载。</p>
+<p>账号：<a href="mailto:2696671285@qq.com">2696671285@qq.com</a></p>
+<p>密码：Oracle123</p>
+<p>让我们感谢这位好心人。同时，需要注意的是在下载的时候VPN需要挂载全局，否则下一个jdk能下到明年去。</p>
+<h2 id="下载后的安装与安装位置"><a href="#下载后的安装与安装位置" class="headerlink" title="下载后的安装与安装位置"></a>下载后的安装与安装位置</h2><p>下载后的jdk在mac上是pkg格式的，打开后一路点确定就可以了。</p>
+<p>安装的默认位置在/Library/Java/JavaVirtualMachines</p>
+<p>这时候，如果我们系统里只有一个jdk存在的话，只需要在终端里输入<code>java -version</code>即可以进行测试安装的正确性。</p>
+<h2 id="多个jdk版本的设定"><a href="#多个jdk版本的设定" class="headerlink" title="多个jdk版本的设定"></a>多个jdk版本的设定</h2><p>如果你需要在很多jdk版本中进行切换，我们需要做什么呢？</p>
+<p>这个问题很好，我们可以这样进行操作。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
+
+<p>进入文件后，我们只要在最后加入这样一句话。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_241.jdk/Contents/Home</span><br></pre></td></tr></table></figure>
+
+<p>这样就可以修改我们默认的jdk版本了。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Godfrey Xu</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://www.xgfjy98.com/2020/02/12/mac%E5%AE%89%E8%A3%85jdk%E4%BB%A5%E5%8F%8Ajdk%E7%9A%84%E8%AE%BE%E7%BD%AE/">http://www.xgfjy98.com/2020/02/12/mac%E5%AE%89%E8%A3%85jdk%E4%BB%A5%E5%8F%8Ajdk%E7%9A%84%E8%AE%BE%E7%BD%AE/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY<strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/java/"># java</a>
+                    
+                        <a href="/tags/macos/"># macos</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/02/13/hexo%E4%B8%8Etravis%E7%9A%84%E9%9B%86%E6%88%90/">hexo与travis的集成</a>
+            
+            
+            <a class="next" rel="next" href="/2020/02/12/Anaconda%E5%9C%A8Mbp%E4%B8%8A%E7%9A%84%E4%BD%BF%E7%94%A8/">Anaconda在Mbp上的使用</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Godfrey Xu | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
